@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SocketIo Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="chat" style="display: none;" class="container">
+        <div class="row">
+            <div class="col-9">
+                <div class="card" style="height: 500px;">
+                    <div class="card-header">
+                        <h3>You are chatting as <span id="usernameDisplay"></span></h3>
+                    </div>
+                    <div class="card-body" style="height: 450px; overflow: auto;">
+                        <div id="messages">
+                            <div id="output"></div>
+                        </div>
+                        <div id="isTyping"></div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <div class="form-row">
+                            <div class="col-9">
+                                <input class="form-control col-10" id="messageText" type="text" placeholder="Message" />
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-primary" id="sendMessage">Send message</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-3">
+                <div class="card" style="height: 500px;">
+                    <div class="card-header">
+                        User list
+                    </div>
+                    <div class="card-body" style="height: 450px; overflow: auto;">
+                        <div id="users">
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div id="login" class="container">
+        <div class="card" style="height: 500px;">
+            <div class="card-header">
+                Please enter your username
+            </div>
+            <div class="card-body text-center" style="height: 450px; overflow: auto;">
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                      <label for="username" class="sr-only">Username</label>
+                      <input class="form-control" id="username" type="text" placeholder="Username" />
+                    </div>
+                    <button class="btn btn-primary" id="loginButton">Go to chatroom</button>
+                </div>
+            </div>
+          </div>
+    </div>
+    <script src="/chat.js"></script>
+</body>
+</html>
